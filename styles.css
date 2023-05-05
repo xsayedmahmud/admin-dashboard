@@ -136,7 +136,14 @@ input[type="search"] {
 }
 
 input[type="search"]::-webkit-search-cancel-button {
-  color: black;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-image: url("icons/close_FILL0_wght400_GRAD0_opsz48.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
 }
 
 .account {
@@ -376,4 +383,50 @@ article div img {
   font-family: var(--ff-inter);
   color: var(--para-color);
   font-size: 0.8rem;
+}
+
+/* footer  */
+
+.footer {
+  position: fixed;
+  bottom: 3rem;
+  left: 3rem;
+  width: 50px;
+  height: 50px;
+  box-shadow: var(--shadow-elevation-medium);
+  transition: all 0.3s cubic-bezier(0.32, 0.91, 0.63, 1.18);
+  will-change: transform;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+.footer a {
+  font-size: 2rem;
+  color: #24292f;
+}
+
+.footer:hover {
+  transform: scale(1.2);
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template:
+      " header header" clamp(150px, 10vw, 220px)
+      " main aside" 5fr /2.5fr minmax(250px, 1fr);
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .footer {
+    right: 1rem;
+    left: auto;
+  }
 }
